@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Webpage Reading Progress",
+  "version": "1.0",
+  "description": "Displays the reading progress of a Webpage",
+  "permissions": [],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png"
+  }
+}
