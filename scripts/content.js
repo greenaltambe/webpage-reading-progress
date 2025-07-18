@@ -2,42 +2,50 @@ const progressBar = document.createElement("div");
 const readingTimeLabel = document.createElement("div");
 const readingTimeLeftLabel = document.createElement("div");
 
-// Style the progress bar
+const color1 = "rgba(42, 123, 155, 1)";
+const color2 = "rgba(87, 199, 133, 1)";
+const color3 = "rgba(237, 221, 83, 1)";
+
 progressBar.style.position = "fixed";
 progressBar.style.top = "0";
 progressBar.style.left = "0";
 progressBar.style.height = "5px";
 progressBar.style.width = "0%";
-progressBar.style.backgroundColor = "blue";
+progressBar.style.background =
+	"linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%)";
 progressBar.style.zIndex = "9999";
 
-// Style the reading time label
 readingTimeLabel.style.position = "fixed";
 readingTimeLabel.style.bottom = "40px";
-readingTimeLabel.style.top = "";
-readingTimeLabel.style.opacity = "0.7";
 readingTimeLabel.style.right = "10px";
 readingTimeLabel.style.fontSize = "12px";
-readingTimeLabel.style.fontWeight = "bold";
-readingTimeLabel.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-readingTimeLabel.style.color = "white";
-readingTimeLabel.style.padding = "5px";
+readingTimeLabel.style.fontWeight = "600";
+readingTimeLabel.style.backgroundColor = "rgba(87, 199, 133, 0.15)";
+readingTimeLabel.style.color = color2;
+readingTimeLabel.style.padding = "6px 10px";
 readingTimeLabel.style.borderRadius = "5px";
-readingTimeLabel.style.zIndex = "9999";
+readingTimeLabel.style.zIndex = "9998";
+readingTimeLabel.style.fontFamily =
+	" 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+readingTimeLabel.style.backdropFilter = "blur(5px)";
+readingTimeLabel.style.webkitBackdropFilter = "blur(5px)";
+readingTimeLabel.style.border = `1px solid ${color2}`;
 
-// Style the reading time left label
 readingTimeLeftLabel.style.position = "fixed";
 readingTimeLeftLabel.style.bottom = "10px";
-readingTimeLeftLabel.style.top = "";
-readingTimeLeftLabel.style.opacity = "0.7";
 readingTimeLeftLabel.style.right = "10px";
 readingTimeLeftLabel.style.fontSize = "12px";
-readingTimeLeftLabel.style.fontWeight = "bold";
-readingTimeLeftLabel.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-readingTimeLeftLabel.style.color = "white";
-readingTimeLeftLabel.style.padding = "5px";
+readingTimeLeftLabel.style.fontWeight = "600";
+readingTimeLeftLabel.style.backgroundColor = "rgba(42, 123, 155, 0.15)";
+readingTimeLeftLabel.style.color = color1;
+readingTimeLeftLabel.style.padding = "6px 10px";
 readingTimeLeftLabel.style.borderRadius = "5px";
-readingTimeLeftLabel.style.zIndex = "9999";
+readingTimeLeftLabel.style.zIndex = "9998";
+readingTimeLeftLabel.style.fontFamily =
+	" 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+readingTimeLeftLabel.style.backdropFilter = "blur(5px)";
+readingTimeLeftLabel.style.webkitBackdropFilter = "blur(5px)";
+readingTimeLeftLabel.style.border = `1px solid ${color1}`;
 
 // Append the progress bar and reading time label to the document body
 document.body.appendChild(progressBar);
@@ -91,9 +99,7 @@ function calculateTimeLeft(readingTime) {
 
 const readingTime = estimateReadingTime();
 
-readingTimeLabel.textContent = `Estimated Reading Time: ${fomatReadingTime(
-	readingTime
-)}`;
+readingTimeLabel.textContent = `Reading Time: ${fomatReadingTime(readingTime)}`;
 
 function updateReadingTimeLeft() {
 	readingTimeLeftLabel.textContent = `Time Left: ${fomatReadingTime(
