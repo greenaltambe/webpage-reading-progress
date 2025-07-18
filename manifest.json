@@ -3,7 +3,7 @@
   "name": "Webpage Reading Progress",
   "version": "1.0",
   "description": "Displays the reading progress of a Webpage",
-  "permissions": [],
+  "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
@@ -12,6 +12,10 @@
       "run_at": "document_end"
     }
   ],
+  "action": {
+    "default_title": "Webpage Reading Progress",
+    "default_popup": "pages/popup.html"
+  },
   "icons": {
     "48": "icons/icon48.png"
   }
