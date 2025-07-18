@@ -13,7 +13,9 @@ progressBar.style.zIndex = "9999";
 
 // Style the reading time label
 readingTimeLabel.style.position = "fixed";
-readingTimeLabel.style.top = "10px";
+readingTimeLabel.style.bottom = "40px";
+readingTimeLabel.style.top = "";
+readingTimeLabel.style.opacity = "0.7";
 readingTimeLabel.style.right = "10px";
 readingTimeLabel.style.fontSize = "12px";
 readingTimeLabel.style.fontWeight = "bold";
@@ -25,7 +27,9 @@ readingTimeLabel.style.zIndex = "9999";
 
 // Style the reading time left label
 readingTimeLeftLabel.style.position = "fixed";
-readingTimeLeftLabel.style.top = "40px";
+readingTimeLeftLabel.style.bottom = "10px";
+readingTimeLeftLabel.style.top = "";
+readingTimeLeftLabel.style.opacity = "0.7";
 readingTimeLeftLabel.style.right = "10px";
 readingTimeLeftLabel.style.fontSize = "12px";
 readingTimeLeftLabel.style.fontWeight = "bold";
